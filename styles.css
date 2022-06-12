@@ -1,0 +1,382 @@
+/*
+- Mobile: 375px
+- Desktop: 1440px
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+/*****************************************************************************
+*                                 001. VARIABLES                             *
+*****************************************************************************/
+
+:root {
+  /*                                001.001 z-index                           */
+  --alpha: 999;
+  --minusAlpha: -999;
+
+  /*                                001.002 colors                            */
+  --violet: hsl(257, 40%, 49%);
+  --softMagenta: hsl(300, 69%, 71%);
+  --softMagentaStrong: hsl(300, 100%, 71%);
+  --white: hsl(0, 0%, 100%);
+
+  --bodyBg: var(--violet);
+  --bodyColor: var(--white);
+
+  --linksLinkRegBg: var(--white);
+  --linksLinkRegColor: var(--violet);
+  --linksLinkRegHoverBg: var(--softMagenta);
+  --linksLinkRegHoverColor: var(--white);
+
+  --socialsLinkColor: var(--white);
+  --socialsLinkImgColor: var(--white);
+  --socialsLinkImgHoverColor: var(--softMagentaStrong);
+
+  /*                                001.003 fonts                             */
+  --primaryFallback: sans-serif;
+
+  --primaryFont: "Open Sans", var(--primaryFallback);
+  --secondaryFont: "Poppins", var(--primaryFallback);
+
+  --fw-400: 400;
+  --fw-600: 600;
+}
+
+/*****************************************************************************
+*                                 002. BASE                                  *
+*****************************************************************************/
+/*                                002.001 all                               */
+*,
+*::before,
+*::after {
+  --marPad: 0;
+
+  margin: var(--marPad);
+  padding: var(--marPad);
+  font-family: var(--primaryFont);
+  box-sizing: border-box;
+}
+
+/*                                002.002 tags                              */
+body {
+  font-family: var(--primaryFont);
+  font-weight: var(--fw-400);
+  background: var(--bodyBg);
+  color: var(--bodyColor);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--secondaryFont);
+  font-weight: var(--fw-600);
+}
+
+/*****************************************************************************
+*                                 003. COMPONENTS                            *
+*****************************************************************************/
+/*                                003.001 page                              */
+.page {
+  min-height: 100vh;
+}
+
+.page__bg {
+  --topLeft: 0;
+
+  top: var(--topLeft);
+  left: var(--topLeft);
+  z-index: var(--minusAlpha);
+  position: fixed;
+}
+
+/*                                003.002 bg                                */
+.bg {
+  --sizeXY: 100%;
+
+  width: var(--sizeXY);
+  height: var(--sizeXY);
+}
+
+.bg__img {
+  --width: 100%;
+  --height: auto;
+
+  width: var(--width);
+  height: var(--height);
+  display: block;
+}
+
+/*                                003.003 logo-box                          */
+.logo-box {
+  --width: 33vw;
+
+  width: var(--width);
+}
+
+.logo-box__img {
+  --padBlock: 7vw;
+  --padInline: 10vw;
+
+  box-sizing: initial; /* to prevent making the img smaller */
+  height: auto;
+  width: 100%;
+  display: block;
+  padding-block: var(--padBlock);
+  padding-inline: var(--padInline);
+}
+
+/*                                003.004 main                              */
+.main {
+  --padBlock: 11vw;
+  --padInline: 10vw;
+  --gap: 3.7em;
+  --gap: clamp(3.7em, 0.7em + 12.8vw, 6.7em);
+
+  padding-block: var(--padBlock);
+  padding-inline: var(--padInline);
+  gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+}
+
+/*                                003.005 illustration-box                  */
+.illustration-box {
+  --width: 100%;
+
+  width: var(--width);
+}
+
+.illustration-box__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*                                003.006 content                           */
+.content {
+  --gap: 2em;
+  --gap: clamp(2em, 0rem + 8.53vw, 4em);
+
+  gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+}
+
+/*                                003.007 content-text                      */
+.content-text {
+  --textAlign: center;
+
+  text-align: var(--textAlign);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.content-text__title {
+  --marBStart: initial;
+
+  margin-block-start: var(--marBStart);
+}
+
+/*                                003.008 content-text                      */
+.title {
+  --fontSize: 1.5rem;
+  --fontSize: clamp(1.5rem, 0.049rem + 6.19vw, 2.95rem);
+
+  font-size: var(--fontSize);
+}
+
+/*                                003.009 desc                              */
+.desc {
+  --fontSize: 1rem;
+  --fontSize: clamp(1rem, 0rem + 4.26vw, 2rem);
+
+  font-size: var(--fontSize);
+}
+
+/*                                003.010 links                             */
+.links {
+  --textAlign: center;
+
+  text-align: var(--textAlign);
+}
+
+/*                                003.011 links-link-reg                    */
+.links-link-reg {
+  --paddingBlock: 0.65em;
+  --paddingInline: 5.5em;
+  --fontSize: 0.9rem;
+  --fontSize: clamp(0.9rem, 0.1rem + 3.413vw, 1.7rem);
+
+  background: var(--linksLinkRegBg);
+  color: var(--linksLinkRegColor);
+  padding-block: var(--paddingBlock);
+  padding-inline: var(--paddingInline);
+  font-size: var(--fontSize);
+  text-decoration: none;
+  border-radius: 2em;
+  cursor: pointer;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.links-link-reg_hover {
+  transition: all 0.2s;
+}
+
+.links-link-reg_hover:hover {
+  background: var(--linksLinkRegHoverBg);
+  color: var(--linksLinkRegHoverColor);
+}
+
+/*                                003.012 socials                           */
+.socials {
+  --marginBlock: 2.3em 7em;
+  --marginInline: 2em;
+  --marginInline: clamp(2em, -1em + 9.8vw, 5em);
+  --gap: 0.938em;
+  --gap: clamp(0.938em, 0.58em + 1.54vw, 1.3em);
+  --justifyContent: center;
+
+  justify-content: var(--justifyContent);
+  gap: var(--gap);
+  margin-block: var(--marginBlock);
+  margin-inline: var(--marginInline);
+  display: flex;
+}
+
+.socials-link {
+  --sizeXY: 2.063em;
+  --sizeXY: clamp(2.063em, 1rem + 4.53vw, 3.13em);
+
+  height: var(--sizeXY);
+  width: var(--sizeXY);
+  color: var(--socialsLinkColor);
+  display: flex;
+  padding: 0.44em;
+  padding: clamp(0.44em, 0.125em + 1.3vw, 0.75em);
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid;
+  overflow: hidden;
+}
+
+.socials-link__img {
+  fill: var(--socialsLinkImgColor);
+  width: auto;
+  height: 100%;
+  display: block;
+}
+
+.socials-link:hover,
+.socials-link:hover .socials-link__img_hover {
+  transition: all 0.2s;
+}
+
+.socials-link:hover,
+.socials-link:hover .socials-link__img_hover {
+  color: var(--socialsLinkImgHoverColor);
+  fill: var(--socialsLinkImgHoverColor);
+}
+
+/*****************************************************************************
+*                                  MEDIA QUERIES                             *
+*****************************************************************************/
+@media (min-width: 800px) {
+  /*                                003.001 page                              */
+  .page__socials {
+    position: absolute;
+    bottom: 1.5em;
+    right: -3px;
+  }
+
+  /*                                003.002 bg                                */
+  .bg__img {
+    --width: auto;
+    --height: 100%;
+
+    object-fit: cover;
+  }
+
+  /*                                003.003 logo-box                          */
+  .logo-box {
+    --width: 14em;
+  }
+
+  .logo-box__img {
+    --padBlock: 2.5em;
+    --padInline: 2em;
+    --padInline: clamp(2em, -1em + 9.8vw, 5em);
+  }
+
+  /*                                003.004 main                              */
+  .main {
+    --padBlock: 3.2em;
+    --padInline: 2em;
+    --padInline: clamp(2em, -1em + 9.8vw, 5em);
+    --gap: 3em;
+
+    flex-direction: row;
+  }
+
+  /*                                003.005 illustration-box                  */
+  .illustration-box {
+    --width: 67%;
+  }
+
+  /*                                003.006 content                           */
+  .content {
+    --gap: 2.4em;
+
+    width: 50%;
+  }
+
+  /*                                003.007 content-text                      */
+  .content-text {
+    --textAlign: left;
+  }
+
+  .content-text__title {
+    --marBStart: 0.2em;
+    --marBStart: clamp(0.2em, -0.8em + 4.26vw, 3em);
+  }
+
+  /*                                003.008 content-text                      */
+  .title {
+    --fontSize: 2.8vw;
+  }
+
+  /*                                003.009 desc                              */
+  .desc {
+    --fontSize: 1.15rem;
+  }
+
+  /*                                003.010 links                             */
+  .links {
+    --textAlign: left;
+  }
+
+  /*                                003.011 links-link-reg                    */
+  .links-link-reg {
+    --paddingBlock: 0.7em;
+    --paddingInline: 3.5em;
+    --fontSize: 1rem;
+    --fontSize: clamp(1rem, 1.35vw, 2rem);
+  }
+
+  /*                                003.012 socials                           */
+  .socials {
+    --marginBlock: 1em;
+    --marginInline: 2em;
+    --marginInline: clamp(2em, -1em + 9.8vw, 5em);
+    --gap: 0.7em;
+    --justifyContent: flex-end;
+  }
+
+  .socials-link {
+    --sizeXY: 2.8em;
+  }
+}
