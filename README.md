@@ -15,7 +15,8 @@
 
 ### Links
 
-- Live Site URL: [GitHub Pages]()
+- Solution URL: [Frontend Mentor](https://your-solution-url.com)
+- Live Site URL: [GitHub Pages](https://hardbuffet.github.io/Huddle-Landing-Page/)
 
 ## My process
 
